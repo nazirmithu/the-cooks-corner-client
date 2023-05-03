@@ -2,9 +2,10 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, handleGithubSignIn, handleGoogleSignIn } = useContext(AuthContext);
 
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState("");
@@ -94,11 +95,11 @@ const Register = () => {
                     </p>
                 </div>
                 <div>
-                    <button className=' outline outline-offset-2 outline-1'>Login with Google</button>
+                    <button onClick={handleGoogleSignIn} className="btn btn-outline btn-info gap-2"><FaGoogle /> Signup with Google</button>
                 </div>
                 <div>
-                    <button className='outline outline-offset-2 outline-1'>Login with Github</button>
-                </div>
+                    <button onClick={handleGithubSignIn} className="btn btn-outline btn-success gap-2"><FaGithub /> Signup with Github</button>
+                </div>  
             </div>
         </div>
     );

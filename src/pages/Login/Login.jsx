@@ -5,12 +5,9 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
-import app from '../../firebase/firebase.config';
-
 
 const Login = () => {
-    const {signInUser, handleGoogleSignIn, handleGithubSignIn}= useContext(AuthContext);
+    const {signInUser, handleGoogleSignIn, handleGithubSignIn,}= useContext(AuthContext);
 
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError]= useState("");
@@ -59,9 +56,6 @@ const Login = () => {
             setEmailError("");
         }
     }
-
-    
-
 
     return (
         <div className="hero min-h-screen bg-base-200">

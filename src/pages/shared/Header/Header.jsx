@@ -35,6 +35,10 @@ const Header = () => {
                                 </div>
                             </label>
                         }
+                        {user && <div>
+                            <h3>User: {user.displayName}</h3>
+                            </div>
+                        }
                     </div>
 
                     <div className="">
