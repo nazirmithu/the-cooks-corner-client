@@ -2,12 +2,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { createContext } from 'react';
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import app from '../firebase/firebase.config';
 
 export const AuthContext = createContext(null);
 
-const auth = getAuth(app)  
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();  
  
 const AuthProvider = ({children}) => {
     //    const user = {thumbnail_url:"https://media.istockphoto.com/id/508345848/photo/grilled-chicken-legs.jpg?s=2048x2048&w=is&k=20&c=XzSthtc6S6rYDxZRRyrJRWtI3xuGgcfcFTbaL42oaDU="}
@@ -21,10 +22,11 @@ const AuthProvider = ({children}) => {
             return signInWithEmailAndPassword(auth, email, password);
         }
 
+        
     const authInfo = {
         user,
         createUser,
-        signInUser
+        signInUser,        
         }
 
     return (

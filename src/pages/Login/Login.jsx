@@ -5,6 +5,11 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
+
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();  
 
 const Login = () => {
     const {signInUser}= useContext(AuthContext);
@@ -57,6 +62,18 @@ const Login = () => {
         }
     }
 
+    const handleGoogleSignIn = ()=>{
+        signInWithPopup(auth, provider)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.log("error", error.massage)
+        })
+    }
+
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col">
@@ -95,7 +112,7 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <Link to="/"><button className="btn btn-primary">Login</button></Link>
                         </div>                    
                     </form>
                     <p className='mb-4 ml-8'>
@@ -105,7 +122,7 @@ const Login = () => {
                     </p>
                 </div>
                 <div>
-                    <button className="btn btn-outline btn-info gap-2"><FaGoogle /> Login with Google</button>
+                    <button onClick={handleGoogleSignIn} className="btn btn-outline btn-info gap-2"><FaGoogle /> Login with Google</button>
                 </div>
                 <div>
                     <button className="btn btn-outline btn-success gap-2"><FaGithub /> Login with Github</button>

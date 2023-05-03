@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);    
 
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState("");
@@ -84,7 +84,7 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
+                            <Link to="/"><button className="btn btn-primary">Register</button></Link>
                         </div>
                     </form>
                     <p className='mb-4 ml-8'>
