@@ -7,23 +7,24 @@ import Details from "../pages/Home/Details/Details";
 import AllDetailsData from "../pages/AllDetailsData/AllDetailsData";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
 
-const router = createBrowserRouter([    
+const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
         errorElement: <ErrorPage></ErrorPage>,
-        children:[
+        children: [
             {
                 path: '/',
                 element: <Home></Home>
             },
             {
-                path:'/details',
+                path: '/details',
                 element: <Details></Details>
             },
             {
-                path: '/alldetailsdata',
-                element: <AllDetailsData></AllDetailsData>
+                path: ':id',
+                element: <AllDetailsData></AllDetailsData>,
+                loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
             },
             {
                 path: '/login',
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/register',
-                element:<Register></Register>
+                element: <Register></Register>
             }
         ]
     }

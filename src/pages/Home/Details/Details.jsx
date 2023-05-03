@@ -10,12 +10,10 @@ const Details = () => {
             .then(res => res.json())
             .then(data => setServicesData(data))
             .catch(error => console.log(error))
-        console.log(servicesData)
-
     }, [])
     return (
         <div>
-            <h2>Chef Details</h2>
+            <h2 className='text-center font-bold mt-8 mb-8'>Chef Details</h2>
 
             {
                 servicesData?.map(services => <Card
