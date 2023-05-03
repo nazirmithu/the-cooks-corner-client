@@ -7,7 +7,7 @@ const Card = ({ services }) => {
     const {id, img_url, name, years_of_experience, num_recipes, likes } = services;
     return (
         <div className=''>
-            <div className="card w-56 bg-base-100 shadow-xl">
+            <div className=" card w-96 bg-base-100 shadow-xl">
                 <img src={img_url} alt="" />
                 <div className="card-body">
                     <h2 className="card-title">Name: {name}</h2>

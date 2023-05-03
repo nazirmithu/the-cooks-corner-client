@@ -13,7 +13,7 @@ const Details = () => {
     }, [])
     return (
         <div>
-            <h2 className='text-center font-bold mt-8 mb-8'>Chef Details</h2>
+            <h2 className='text-4xl text-center font-bold mt-8 mb-8'>Chef Details</h2>
 
             {
                 servicesData?.map(services => <Card

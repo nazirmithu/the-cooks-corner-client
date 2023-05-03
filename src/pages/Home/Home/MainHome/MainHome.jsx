@@ -15,8 +15,9 @@ const MainHome = () => {
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide4" className="btn btn-circle">❮</a>
                         <div>
-                            <h5 className='text-teal-300 text-2xl font-bold flex text-center items-center'>Cook's C@rner</h5>
-                            <p className='text-sky-400'>Welcome to my food website! <br /> Here you will find a variety of delicious <br /> and easy-to-follow recipes.</p>
+                            <h5 className='text-teal-300 text-6xl font-bold flex text-center items-center'>Cook's Corner</h5>
+                            <br />
+                            <p className='text-sky-400 text-lg'>Welcome to my food website! <br /> Here you will find a variety of delicious <br /> and easy-to-follow recipes.</p>
                         </div>
                         <a href="#slide2" className="btn btn-circle">❯</a>
                     </div>
@@ -26,8 +27,9 @@ const MainHome = () => {
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide1" className="btn btn-circle">❮</a>
                         <div>
-                            <h5 className='text-teal-300 text-2xl font-bold flex text-center items-center'>Cook's Corner</h5>
-                            <p className='text-sky-400'>Welcome to my food website! <br /> Here you will find a variety of delicious <br /> and easy-to-follow recipes.</p>
+                            <h5 className='text-teal-300 text-6xl font-bold flex text-center items-center'>Cook's Corner</h5>
+                            <br />
+                            <p className='text-sky-400 text-lg'>Welcome to my food website! <br /> Here you will find a variety of delicious <br /> and easy-to-follow recipes.</p>
                         </div>
                         <a href="#slide3" className="btn btn-circle">❯</a>
                     </div>
@@ -37,8 +39,9 @@ const MainHome = () => {
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide2" className="btn btn-circle">❮</a>
                         <div>
-                            <h5 className='text-teal-300 text-2xl font-bold flex text-center items-center'>Cook's Corner</h5>
-                            <p className='text-sky-400'>Welcome to my food website! <br /> Here you will find a variety of delicious <br /> and easy-to-follow recipes.</p>
+                            <h5 className='text-teal-300 text-6xl font-bold flex text-center items-center'>Cook's Corner</h5>
+                            <br />
+                            <p className='text-sky-400 text-lg'>Welcome to my food website! <br /> Here you will find a variety of delicious <br /> and easy-to-follow recipes.</p>
                         </div>
                         <a href="#slide4" className="btn btn-circle">❯</a>
                     </div>
@@ -49,8 +52,9 @@ const MainHome = () => {
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-circle">❮</a>
                         <div>
-                            <h5 className='text-teal-300 text-2xl font-bold flex text-center items-center'>Cook's Corner</h5>
-                            <p className='text-sky-400'>Welcome to my food website! <br /> Here you will find a variety of delicious <br /> and easy-to-follow recipes.</p>
+                            <h5 className='text-teal-300 text-6xl font-bold flex text-center items-center'>Cook's Corner</h5>
+                            <br />
+                            <p className='text-sky-400 text-lg'>Welcome to my food website! <br /> Here you will find a variety of delicious <br /> and easy-to-follow recipes.</p>
                         </div>
                         <a href="#slide1" className="btn btn-circle">❯</a>
                     </div>
