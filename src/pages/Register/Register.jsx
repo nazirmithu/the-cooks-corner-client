@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);    
+    const { createUser } = useContext(AuthContext);
 
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState("");
@@ -47,7 +47,7 @@ const Register = () => {
                 <div className="text-center">
                     <h1 className="text-5xl font-bold">Please Register</h1>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-md bg-base-100">
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">

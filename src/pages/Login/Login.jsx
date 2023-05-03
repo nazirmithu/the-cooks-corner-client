@@ -8,11 +8,9 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 
-const auth = getAuth(app);
-const provider = new GoogleAuthProvider();  
 
 const Login = () => {
-    const {signInUser}= useContext(AuthContext);
+    const {signInUser, handleGoogleSignIn, handleGithubSignIn}= useContext(AuthContext);
 
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError]= useState("");
@@ -62,16 +60,7 @@ const Login = () => {
         }
     }
 
-    const handleGoogleSignIn = ()=>{
-        signInWithPopup(auth, provider)
-        .then(result=>{
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error=>{
-            console.log("error", error.massage)
-        })
-    }
+    
 
 
     return (
@@ -80,7 +69,7 @@ const Login = () => {
                 <div className="text-center">
                     <h1 className="text-5xl font-bold">Please Login !</h1>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-md bg-base-100">
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -125,7 +114,7 @@ const Login = () => {
                     <button onClick={handleGoogleSignIn} className="btn btn-outline btn-info gap-2"><FaGoogle /> Login with Google</button>
                 </div>
                 <div>
-                    <button className="btn btn-outline btn-success gap-2"><FaGithub /> Login with Github</button>
+                    <button onClick={handleGithubSignIn} className="btn btn-outline btn-success gap-2"><FaGithub /> Login with Github</button>
                 </div>                
             </div>
         </div>
