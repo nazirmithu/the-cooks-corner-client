@@ -1,12 +1,16 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
-    const {createUser}= useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
 
-    const handleRegister = event=>{
+    const [password, setPassword] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+
+
+    const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -14,14 +18,29 @@ const Register = () => {
         const photo = form.photo.value;
         const password = form.password.value;
         console.log(email, name, photo, password)
-
+        form.reset()
         createUser(email, password)
-        .then(result =>{
-            const createdUser = result.user;
-            console.log(createdUser)
-        })
-        .catch(error=>console.log(error))
+            .then(result => {
+                const createdUser = result.user;
+                console.log(createdUser)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
+
+    const handlePassword = (event) => {
+        const passwordInput = event.target.value;
+        setPassword(passwordInput);
+
+        if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(passwordInput)) {
+            setPasswordError("Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character");
+        }
+        else {
+            setPasswordError("");
+        }
+    }
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col">
@@ -52,7 +71,14 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="Your Password" className="input input-bordered" required />
+                            {passwordError && <span className='text-red-500'>{passwordError}</span>}
+                            <input
+                                type="password"
+                                name="password"
+                                placeholder="Your Password"
+                                value={password}
+                                onChange={handlePassword}
+                                className="input input-bordered" required />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
