@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
 
     const GithubSignIn = () => {
         setLoading(true)
-        return signInWithPopup(auth, githubProvider)            
+        return signInWithPopup(auth, githubProvider)
     }
 
     const handleSignOut = () => {
