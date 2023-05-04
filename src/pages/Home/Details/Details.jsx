@@ -6,7 +6,7 @@ const Details = () => {
     const [servicesData, setServicesData] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/allData")
+        fetch("https://the-cooks-corner-server.vercel.app/allData")
             .then(res => res.json())
             .then(data => setServicesData(data))
             .catch(error => console.log(error))

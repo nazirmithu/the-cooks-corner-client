@@ -28,7 +28,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <AllDetailsData></AllDetailsData>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
+                loader: ({ params }) => fetch(`https://the-cooks-corner-server.vercel.app/allData/${params.id}`)
             },
             {
                 path: '/login',
