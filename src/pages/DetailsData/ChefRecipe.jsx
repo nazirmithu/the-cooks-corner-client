@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 // eslint-disable-next-line react/prop-types
 const ChefRecipe = ({ recipe }) => {
     // eslint-disable-next-line react/prop-types
-    const { name, recipe_url, ingredients, cooking_method } = recipe;
+    const { name, recipe_url, ingredients, cooking_method, rating } = recipe;
     const [disabled, setDisabled] = useState(false);
 
     const favoriteButton = () => {
@@ -44,6 +44,7 @@ const ChefRecipe = ({ recipe }) => {
                         {method}
                     </p>)
                 }
+                <p>Rating: {rating}</p>
             </div>
             <button onClick={favoriteButton} disabled={disabled} className='btn bg-purple-900'>Favorite button</button>
             <Toaster />

@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log('environment variable', import.meta.env.VITE_PASSapiKey)
 const firebaseConfig = {
-  apiKey: "AIzaSyDnux1fpyTKZ9OZXXAX2waceafGVC5IQ58",
-  authDomain: "the-cooks-corner.firebaseapp.com",
-  projectId: "the-cooks-corner",
-  storageBucket: "the-cooks-corner.appspot.com",
-  messagingSenderId: "933576972228",
-  appId: "1:933576972228:web:cfefd0ea66dd1e2738b691"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
