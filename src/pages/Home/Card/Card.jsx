@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 const Card = ({ services }) => {
     const {id, img_url, name, years_of_experience, num_recipes, likes } = services;
     return (
-        <div className=''>
-            <div className=" card w-96 bg-base-100 shadow-xl">
+        
+            <div className=" card shadow-xl">
                 <img src={img_url} alt="" />
                 <div className="card-body">
                     <h2 className="card-title">Name: {name}</h2>
@@ -15,11 +15,11 @@ const Card = ({ services }) => {
                     <p>Numbers of Recipes: {num_recipes}</p>
                     <p>Likes: {likes}</p>
                     <div className="card-actions justify-end">
-                        <Link to={"/alldetailsdata"}><button className="btn btn-primary">View Recipes</button></Link>
+                        <Link to={`/recipe/${id}`}><button className="btn btn-primary">View Recipes</button></Link>
                     </div>
                 </div>
             </div>
-        </div>
+        
     );
 };
 

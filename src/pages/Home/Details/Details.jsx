@@ -12,15 +12,17 @@ const Details = () => {
             .catch(error => console.log(error))
     }, [])
     return (
-        <div>
+        <div className="max-w-screen-lg mx-auto">
             <h2 className='text-4xl text-center font-bold mt-8 mb-8'>Chef Details</h2>
 
+            <div className="grid grid-cols-2 gap-8">
             {
                 servicesData?.map(services => <Card
                     key={services.id}
                     services={services}
                 ></Card>)
             }
+            </div>
         </div>
     );
 };

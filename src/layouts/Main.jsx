@@ -7,9 +7,10 @@ import { Outlet } from 'react-router-dom';
 const Main = () => {
     return (
         <div>
-            <Header></Header>
+            <Header>
             <Outlet></Outlet>
             <Footer></Footer>
+            </Header>
         </div>
     );
 };

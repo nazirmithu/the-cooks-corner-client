@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Register = () => {
-    const { createUser, handleGithubSignIn, handleGoogleSignIn } = useContext(AuthContext);
-
+    const { createUser, GoogleSignIn, GithubSignIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/'
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState("");
 
@@ -40,6 +41,16 @@ const Register = () => {
         else {
             setPasswordError("");
         }
+    }
+
+    const handleGoogleSignIn = () => {
+        GoogleSignIn()
+        navigate(from, { replace: true })
+    }
+
+    const handleGithubSignIn = () => {
+        GithubSignIn()
+        navigate(from, { replace: true })
     }
 
     return (
@@ -85,7 +96,7 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <Link to="/"><button className="btn btn-primary">Register</button></Link>
+                            <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
                     <p className='mb-4 ml-8'>
@@ -99,7 +110,7 @@ const Register = () => {
                 </div>
                 <div>
                     <button onClick={handleGithubSignIn} className="btn btn-outline btn-success gap-2"><FaGithub /> Signup with Github</button>
-                </div>  
+                </div>
             </div>
         </div>
     );
