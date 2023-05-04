@@ -12,8 +12,6 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
-    //    const user = {thumbnail_url:"https://media.istockphoto.com/id/508345848/photo/grilled-chicken-legs.jpg?s=2048x2048&w=is&k=20&c=XzSthtc6S6rYDxZRRyrJRWtI3xuGgcfcFTbaL42oaDU="}
-    //    const user = null;
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 

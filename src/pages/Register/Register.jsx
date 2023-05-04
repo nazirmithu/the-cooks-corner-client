@@ -20,11 +20,13 @@ const Register = () => {
         const photo = form.photo.value;
         const password = form.password.value;
         console.log(email, name, photo, password)
-        form.reset()
+
         createUser(email, password)
-            .then(result => {
-                const createdUser = result.user;
-                console.log(createdUser)
+        .then(result => {
+            const createdUser = result.user;
+            console.log(createdUser)
+            form.reset()
+            navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error)
@@ -35,8 +37,8 @@ const Register = () => {
         const passwordInput = event.target.value;
         setPassword(passwordInput);
 
-        if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(passwordInput)) {
-            setPasswordError("Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character");
+        if (passwordInput.length < 6) {
+            setPasswordError("Password must at list 6 characters");
         }
         else {
             setPasswordError("");
@@ -54,10 +56,10 @@ const Register = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero bg-base-200">
             <div className="hero-content flex-col">
                 <div className="text-center">
-                    <h1 className="text-5xl font-bold">Please Register</h1>
+                    <h1 className="text-5xl font-bold mt-4 mb-4">Please Register</h1>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-md bg-base-100">
                     <form onSubmit={handleRegister} className="card-body">
@@ -77,7 +79,11 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Email Address</span>
                             </label>
-                            <input type="email" name="email" placeholder="Your Email" className="input input-bordered" required />
+                            <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Your Email" 
+                            className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -100,7 +106,7 @@ const Register = () => {
                         </div>
                     </form>
                     <p className='mb-4 ml-8'>
-                        <Link to="/Login" className="label-text-alt link link-hover">
+                        <Link to="/Login" className="label-text-alt link link-hover text-green-300">
                             Already Have an Account ? Please Login
                         </Link>
                     </p>

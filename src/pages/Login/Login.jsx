@@ -29,7 +29,6 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-
                 form.reset()
                 navigate(from, { replace: true })
             })
@@ -72,10 +71,10 @@ const Login = () => {
 
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero bg-base-200">
             <div className="hero-content flex-col">
                 <div className="text-center">
-                    <h1 className="text-5xl font-bold">Please Login !</h1>
+                    <h1 className="mt-4 mb-4 text-5xl font-bold">Please Login !</h1>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-md bg-base-100">
                     <form onSubmit={handleLogin} className="card-body">
@@ -113,7 +112,7 @@ const Login = () => {
                         </div>
                     </form>
                     <p className='mb-4 ml-8'>
-                        <Link to="/register" className="label-text-alt link link-hover">
+                        <Link to="/register" className="label-text-alt link link-hover text-green-300">
                             New to this site ? Please Register
                         </Link>
                     </p>

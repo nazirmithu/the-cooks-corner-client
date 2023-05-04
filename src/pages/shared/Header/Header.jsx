@@ -10,7 +10,7 @@ const Header = ({ children }) => {
     if(loading){
         return <progress className="progress w-56"></progress>
     }
-   
+          
     const handleLogOut = () => {
         handleSignOut()
             .then()
@@ -53,7 +53,9 @@ const Header = ({ children }) => {
                                                 <a className="justify-between">
                                                     {
                                                         user?.displayName
-
+                                                    }
+                                                    {
+                                                        // user?.
                                                     }
                                                     
                                                 </a>

@@ -7,6 +7,7 @@ import Details from "../pages/Home/Details/Details";
 import AllDetailsData from "../pages/AllDetailsData/AllDetailsData";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
 import Blog from "../pages/Blog/Blog";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +25,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/recipe/:id',
-                element: <AllDetailsData></AllDetailsData>,
+                element: <PrivateRoute>
+                    <AllDetailsData></AllDetailsData>
+                </PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
             },
             {

@@ -3,14 +3,21 @@
 import React, { useEffect } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Card from '../Home/Card/Card';
+import ChefRecipe from '../DetailsData/ChefRecipe';
+import toast, { Toaster } from 'react-hot-toast';
 
 const AllDetailsData = () => {
     const allServices = useLoaderData();
     // console.log(allServices)
-    const { img_url, name, bio, likes, num_recipes, years_of_experience } = allServices;
+    const { img_url, name, bio, likes, num_recipes, years_of_experience,  rating, recipe} = allServices;
+    
+    const favoriteButton = ()=>{
+        toast.success('Successfully created!');
+        <Toaster/>
+    }
 
     return (
-        <section>
+        <section className='p-20 '>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <img src={img_url} className="max-w-lg rounded-lg shadow-2xl" />
@@ -24,8 +31,16 @@ const AllDetailsData = () => {
                 </div>
             </div>
             <h2>Chef Recipes Page</h2>
-            <div>
-                
+            <div className='grid grid-cols-2 gap-8 pt-20'>
+                {
+                    recipe.map((item,index)=> <ChefRecipe
+                    key={index}
+                    recipe={item}
+                    favoriteButton={favoriteButton}
+                    > 
+
+                    </ChefRecipe>)
+                }
             </div>
 
         </section>

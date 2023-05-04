@@ -9,15 +9,19 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     
-    if (!user) {
-        setLoading(false)
-        return <Navigate to="/login" state={{ from: location, search: location.search }}></Navigate>;
+    if(user){
+        return children;
     }
 
-    if (loading) {
-        return "loading..."
+    if (!user) {
+        // setLoading(false)
+        return <Navigate to="/login" replace state={{ from: location, search: location.search }}></Navigate>;
     }
-    return children;
+
+    // if (loading) {
+    //     return "loading..."
+    // }
+    // return children;
 
 
 
