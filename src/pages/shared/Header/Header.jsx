@@ -53,9 +53,10 @@ const Header = ({ children }) => {
                                                 <a className="justify-between">
                                                     {
                                                         user?.displayName
-                                                    }
+                                                    },
                                                     {
-                                                        // user?.
+                                                        user?.photoURL
+
                                                     }
                                                     
                                                 </a>

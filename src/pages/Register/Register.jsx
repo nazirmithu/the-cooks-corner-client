@@ -13,6 +13,7 @@ const Register = () => {
 
 
     const handleRegister = event => {
+
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -23,8 +24,7 @@ const Register = () => {
 
         createUser(email, password)
         .then(result => {
-            const createdUser = result.user;
-            console.log(createdUser)
+            const createdUser = result.user;            
             form.reset()
             navigate(from, { replace: true })
             })
