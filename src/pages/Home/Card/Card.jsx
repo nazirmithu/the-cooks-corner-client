@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
 const Card = ({ services }) => {
@@ -8,7 +9,10 @@ const Card = ({ services }) => {
     return (
 
         <div className=" card shadow-xl">
-            <img src={img_url} alt="" />
+            
+            <LazyLoad>
+                <img className='h-96 w-full' src={img_url} alt="" />
+            </LazyLoad>
             <div className="card-body">
                 <h2 className="card-title">Name: {name}</h2>
                 <p>Years of Experience: {years_of_experience}</p>

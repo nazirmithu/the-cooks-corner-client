@@ -9,6 +9,7 @@ import image4 from '../../assets/Desserts.jpg';
 import image5 from '../../assets/drinks.jpg';
 import image6 from '../../assets/Bread.jpg';
 import image7 from '../../assets/salad.jpg';
+import image8 from '../../assets/pic-4.jpg';
 
 const Order = () => {
     return (
@@ -27,7 +28,7 @@ const Order = () => {
                         <img className='w-96 h-96' src={image2} alt="Burger" />
                     </div>
                     <div className="carousel-item">
-                        <img className='w-96 h-96' src={image3} alt="Burger" />
+                        <img className='w-96 h-96' src={image8} alt="Burger" />
                     </div>
                 </div>
             </div>

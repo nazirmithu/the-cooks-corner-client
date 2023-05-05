@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
+import LazyLoad from 'react-lazy-load';
 // eslint-disable-next-line react/prop-types
 const ChefRecipe = ({ recipe }) => {
     // eslint-disable-next-line react/prop-types
@@ -18,6 +19,7 @@ const ChefRecipe = ({ recipe }) => {
 
     return (
         <div>
+            
             <div className='card card-compact  bg-purple-50 shadow-xl'>
                 <h1 className='text-center font-bold p-4'>{name}</h1>
                 <img src={recipe_url} alt="" />
