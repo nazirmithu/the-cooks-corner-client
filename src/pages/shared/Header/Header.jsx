@@ -6,11 +6,11 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Header = ({ children }) => {
-    const { user, loading, handleSignOut } = useContext(AuthContext);   
-    if(loading){
+    const { user, loading, handleSignOut } = useContext(AuthContext);
+    if (loading) {
         return <progress className="progress w-56"></progress>
     }
-          
+
     const handleLogOut = () => {
         handleSignOut()
             .then()
@@ -42,32 +42,32 @@ const Header = ({ children }) => {
                                 </li>
                                 {
                                     user ? <li>
-                                    <div className="dropdown dropdown-end">
-                                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                            <div className="w-10 rounded-full">
-                                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                            </div>
-                                        </label>
-                                        <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-                                            <li>
-                                                <a className="justify-between">
-                                                    {
-                                                        user?.displayName
-                                                    },
-                                                    {
-                                                        user?.photoURL
+                                        <div className="dropdown dropdown-end">
+                                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                                <div className="w-10 rounded-full">
+                                                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                                </div>
+                                            </label>
+                                            <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                                                <li>
+                                                    <a className="justify-between">
+                                                        {
+                                                            user?.displayName
+                                                        },
+                                                        {
+                                                            user?.photoURL
 
-                                                    }
-                                                    
-                                                </a>
-                                            </li>
+                                                        }
 
-                                            <li><button onClick={handleLogOut}>Logout</button></li>
-                                        </ul>
-                                    </div>
-                                </li> 
-                                : 
-                                    <li><NavLink to="/login"><button className='btn btn-primary'>Login</button></NavLink></li>
+                                                    </a>
+                                                </li>
+
+                                                <li><button onClick={handleLogOut}>Logout</button></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                        :
+                                        <li><NavLink to="/login"><button className='btn btn-primary'>Login</button></NavLink></li>
                                 }
 
                             </ul>

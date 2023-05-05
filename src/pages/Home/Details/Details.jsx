@@ -12,8 +12,9 @@ const Details = () => {
             .catch(error => console.log(error))
     }, [])
     return (
+        
         <div className="max-w-screen-lg mx-auto">
-            <h2 className='text-4xl text-center font-bold mt-8 mb-8'>Chef Details</h2>
+            <h2 className='text-3xl text-center font-bold mt-10 mb-10'>Chef Details</h2>
 
             <div className="grid grid-cols-2 gap-8">
             {

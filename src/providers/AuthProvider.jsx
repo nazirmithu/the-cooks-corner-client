@@ -16,6 +16,7 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
@@ -36,14 +37,8 @@ const AuthProvider = ({ children }) => {
     }
 
     const handleSignOut = () => {
+        setLoading(true)
         return signOut(auth)
-            .then(result => {
-                console.log(result)
-                setUser(null);
-            })
-            .catch(error => {
-                console.log(error)
-            })
     }
 
     useEffect(() => {

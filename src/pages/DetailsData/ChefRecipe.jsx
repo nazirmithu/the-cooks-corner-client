@@ -47,9 +47,9 @@ const ChefRecipe = ({ recipe }) => {
                             {method}
                         </p>)
                     }
-                    <Rating style={{ maxWidth: 250 }} value={rating} readOnly />
+                    <Rating style={{ maxWidth: 150 }} value={rating} readOnly />
                 </div>
-                <button onClick={favoriteButton} disabled={disabled} className='btn bg-purple-900'>Favorite button</button>
+                <button onClick={favoriteButton} disabled={disabled} className='btn bg-purple-900 mt-6'>Favorite button</button>
                 <Toaster />
             </div>
         </div>

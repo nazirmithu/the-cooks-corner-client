@@ -25,7 +25,7 @@ const AllDetailsData = () => {
                     </div>
                 </div>
             </div>
-            <h2>Chef Recipes Page</h2>
+            <h2 className='text-3xl font-bold mt-20 text-center'>Recipes Details</h2>
             <div className='grid grid-cols-2 gap-8 pt-20'>
                 {
                     recipe.map((item, index) => <ChefRecipe
