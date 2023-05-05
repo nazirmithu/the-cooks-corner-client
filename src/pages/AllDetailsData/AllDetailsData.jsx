@@ -7,7 +7,6 @@ import ChefRecipe from '../DetailsData/ChefRecipe';
 
 const AllDetailsData = () => {
     const allServices = useLoaderData();
-    // console.log(allServices)
     const { img_url, name, bio, likes, num_recipes, years_of_experience, rating, recipe } = allServices;
 
 

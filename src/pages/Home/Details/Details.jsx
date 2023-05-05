@@ -9,7 +9,7 @@ const Details = () => {
         fetch("https://the-cooks-corner-server.vercel.app/allData")
             .then(res => res.json())
             .then(data => setServicesData(data))
-            .catch(error => console.log(error))
+            .catch(error => error.message)
     }, [])
     return (
         
